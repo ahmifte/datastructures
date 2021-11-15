@@ -21,3 +21,18 @@ Recipe for retrieving from a hash table:
 - Check if the array at that index has contents, if so, check the key saved there.
 - If the key matches the one you're looking for, return the value.
 - If the keys don't match, continue to the next position depending on your collision strategy.
+
+
+Notice how by filling the tree from left to right; we’re leaving no gaps in the array. The location of each child or parent derives from a formula using the index.
+
+Heaps:
+indices:
+left child: (index * 2) + 1
+right child: (index * 2) + 2
+parent: (index - 1) / 2 — not used on the root!
+
+“child” and “parent” elements are determined by their relative indices within the internal list. By doing some arithmetic on an element’s index, we can determine the indices for parent and child elements (if they exist).
+
+Parent: index // 2
+Left Child: index * 2
+Right Child: (index * 2) + 1
